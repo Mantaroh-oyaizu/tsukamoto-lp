@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>コンビニエント ツカモト</title>
+<meta name="description" content="藤枝市瀬戸新屋のコンビニエント ツカモト。修理・鍵・ガラス・網戸・蜂駆除など、暮らしの困りごとに。先ずは何でもご相談下さい。">
+<meta property="og:title" content="コンビニエント ツカモト">
+<meta property="og:description" content="暮らしの困った、まずはツカモトへ。修理も、交換も、ちょっとした困りごとも。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b5fc7'/%3E%3Cpath d='M9 22l9-9M17 9l6 6' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* Layout concept: 名刺の水色い配管モチーフを背景に、写真枠を大きく並べる1カラム基調のLP。スマホ優先、PCでは2カラムに広がる。 */
+:root{
+  --bg:#ffffff;
+  --surface:#f1f6fd;
+  --ink:#161a20;
+  --muted:#4f5a68;
+  --line:#d6e2f2;
+  --blue-soft:#d9e8fb;
+  --blue:#4f93e6;
+  --accent:#0b5fc7;
+  --on-accent:#ffffff;
+  --green:#0b8a4a;
+  --green-soft:#dcf3e5;
+  --on-green:#ffffff;
+  --warn-bg:#fff6dc;
+  --warn-ink:#6d5300;
+  --ph-a:#e4eefb;
+  --ph-b:#d9e8fa;
+  --ph-line:#8db6ea;
+  --ph-ink:#1f5aa8;
+  --shadow:0 10px 30px rgba(11,95,199,.16);
+  --font-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
+  --font-body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f151c;--surface:#17202a;--ink:#eaf0f6;--muted:#a9b6c3;--line:#273546;
+    --blue-soft:#162f55;--blue:#3b78c9;--accent:#6fb0ff;--on-accent:#08182c;
+    --green:#46c98a;--green-soft:#15382a;--on-green:#062414;
+    --warn-bg:#3a3014;--warn-ink:#f1d98a;
+    --ph-a:#182a40;--ph-b:#1d3350;--ph-line:#4a7bb8;--ph-ink:#a8cdf5;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f151c;--surface:#17202a;--ink:#eaf0f6;--muted:#a9b6c3;--line:#273546;
+  --blue-soft:#162f55;--blue:#3b78c9;--accent:#6fb0ff;--on-accent:#08182c;
+  --green:#46c98a;--green-soft:#15382a;--on-green:#062414;
+  --warn-bg:#3a3014;--warn-ink:#f1d98a;
+  --ph-a:#182a40;--ph-b:#1d3350;--ph-line:#4a7bb8;--ph-ink:#a8cdf5;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.85;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.4;margin:0}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:20px}
+section.sec{padding-block:64px}
+section.alt{background:var(--surface)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* demo bar */
+
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);transition:box-shadow .25s}
+.hdr.scrolled{box-shadow:0 2px 14px rgba(43,106,158,.14)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:900;font-size:1.05rem;text-decoration:none;min-width:0}
+.logo-mark{flex:none;width:34px;height:34px;border-radius:10px;background:var(--blue-soft);display:grid;place-items:center;color:var(--accent)}
+.hdr-tel{display:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:var(--on-accent);border-radius:999px;padding:15px 26px;font-weight:700;font-size:1.05rem;text-decoration:none;border:2px solid var(--accent);transition:transform .15s,box-shadow .15s;cursor:pointer;font-family:inherit;line-height:1.3}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.sm{padding:9px 16px;font-size:.92rem}
+.btn svg{flex:none}
+
+/* section head */
+.sec-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--warn-ink);background:var(--warn-bg);border-radius:6px;padding:2px 8px;margin-bottom:10px;line-height:1.6}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;color:var(--accent);margin-bottom:6px}
+.sec-title{font-size:clamp(1.55rem,5.4vw,2.2rem);font-weight:900}
+.sec-lead{margin-top:14px;color:var(--muted);max-width:40em}
+.sec-head{margin-bottom:34px}
+
+/* photo slot */
+.photo{position:relative;overflow:hidden;border-radius:18px;width:100%;max-width:100%;background:repeating-linear-gradient(135deg,var(--ph-a) 0 14px,var(--ph-b) 14px 28px);border:2px dashed var(--ph-line);color:var(--ph-ink)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.photo .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px;text-align:center}
+.photo .ph b{font-family:var(--font-display);font-size:.98rem;line-height:1.4}
+.photo .ph small{font-size:.74rem;opacity:.85;line-height:1.5}
+.photo .ph .chip{margin-top:4px;font-size:.68rem;font-weight:700;border:1px solid var(--ph-line);border-radius:999px;padding:1px 10px;background:var(--bg)}
+.photo.has-img{border:0}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--surface),var(--bg));padding-block:36px 56px}
+.pipe{position:absolute;background:var(--blue-soft);border-radius:999px;z-index:0}
+.pipe.p1{width:64px;height:240px;top:-30px;right:6%}
+.pipe.p2{width:240px;height:64px;top:150px;right:-60px}
+.pipe.p3{width:56px;height:56px;bottom:30px;left:-14px;background:var(--green-soft)}
+.pipe.p2{background:var(--green-soft)}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:28px}
+.hero-copy{display:flex;flex-direction:column;gap:18px;min-width:0}
+.hero h1{font-size:clamp(2rem,8.4vw,3.3rem);font-weight:900;letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:1.1rem;font-weight:500}
+.consult{display:inline-block;align-self:flex-start;background:var(--green);color:var(--on-green);border-radius:16px;padding:12px 20px;font-family:var(--font-display);font-weight:900;font-size:clamp(1.15rem,4.8vw,1.55rem);line-height:1.4;box-shadow:var(--shadow)}
+.hero-note{font-size:.9rem;color:var(--muted)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-photo{aspect-ratio:4/3}
+
+/* troubles */
+.trouble-grid{display:grid;gap:14px}
+.t-card{display:grid;grid-template-columns:112px 1fr;gap:14px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:12px;min-width:0}
+.alt .t-card{background:var(--bg)}
+.t-card .photo{aspect-ratio:1/1;border-radius:12px}
+.t-card .photo .ph b{font-size:.78rem}
+.t-card .photo .ph small,.t-card .photo .ph .chip{display:none}
+.t-ico{width:40px;height:40px;border-radius:12px;background:var(--blue-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:8px}
+.t-card h3{font-size:1.05rem;font-weight:700}
+.t-card.main{border-color:var(--green);background:var(--green-soft)}
+.t-card.main .t-ico{background:var(--green);color:var(--on-green)}
+.closing{margin-top:30px;text-align:center;font-family:var(--font-display);font-weight:900;font-size:clamp(1.2rem,5vw,1.7rem);line-height:1.6}
+.closing span{background:linear-gradient(transparent 62%,var(--green-soft) 62%);padding-inline:4px}
+
+/* services */
+.svc-grid{display:grid;gap:18px}
+.svc{background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.svc .photo{border-radius:0;border-width:0 0 2px 0;aspect-ratio:16/9}
+.svc-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px}
+.svc-no{font-family:var(--font-display);font-weight:900;color:var(--accent);font-size:.9rem;letter-spacing:.06em}
+.svc h3{font-size:1.2rem;font-weight:900}
+.svc p{color:var(--muted);font-size:.93rem;line-height:1.75}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{background:var(--blue-soft);color:var(--ink);border-radius:999px;padding:3px 12px;font-size:.88rem;font-weight:500;line-height:1.6}
+.svc-more{margin-top:26px;text-align:center;font-weight:700;font-size:1.05rem;font-family:var(--font-display)}
+.cat-note{margin-top:10px;text-align:center;font-size:.8rem;color:var(--muted)}
+
+/* cases */
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--warn-bg);color:var(--warn-ink);border-radius:14px;padding:12px 16px;font-size:.9rem;line-height:1.7;margin-bottom:24px}
+.case-grid{display:grid;gap:20px}
+.case{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ba figure{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.ba figcaption{font-size:.78rem;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.ba .photo{aspect-ratio:4/3;border-radius:12px}
+.ba .photo .ph b{font-size:.78rem}
+.ba .photo .ph small,.ba .photo .ph .chip{display:none}
+.case-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.badge{font-size:.7rem;font-weight:700;background:var(--warn-bg);color:var(--warn-ink);border-radius:6px;padding:1px 8px;line-height:1.7}
+.case h3{font-size:1.1rem;font-weight:900}
+.dl{display:grid;gap:2px}
+.dl dt{font-size:.75rem;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.dl dd{margin:0 0 8px;font-size:.93rem;color:var(--muted);line-height:1.75}
+
+/* owner */
+.owner{display:grid;gap:28px;align-items:center}
+.owner .photo{aspect-ratio:4/5;max-width:420px;margin-inline:auto}
+.owner-name{font-family:var(--font-display);font-weight:900;font-size:1.7rem;line-height:1.3}
+.owner-name small{display:block;font-size:.85rem;font-weight:500;color:var(--muted);letter-spacing:.14em;margin-top:2px}
+.owner-role{font-size:.85rem;font-weight:700;color:var(--accent);letter-spacing:.1em}
+.owner blockquote{margin:18px 0 0;padding:18px 20px;background:var(--surface);border-radius:16px;position:relative}
+.alt .owner blockquote{background:var(--bg)}
+.owner blockquote p+p{margin-top:10px}
+.owner .draft{margin-top:12px;font-size:.8rem;color:var(--warn-ink);background:var(--warn-bg);border-radius:8px;padding:6px 12px;display:inline-block;line-height:1.6}
+
+/* flow */
+.flow-photo{aspect-ratio:21/9;margin-bottom:28px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.step{position:relative;display:grid;grid-template-columns:56px 1fr;gap:16px;padding-bottom:26px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:27px;top:56px;bottom:0;width:2px;background:var(--blue)}
+.step:last-child::before{display:none}
+.step-no{width:56px;height:56px;border-radius:50%;background:var(--green);color:var(--on-green);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;line-height:1}
+.step-no small{font-size:.58rem;letter-spacing:.1em;margin-bottom:2px}
+.step-no b{font-size:1.35rem}
+.step h3{font-size:1.08rem;font-weight:900;margin-top:2px}
+.step p{margin-top:4px;color:var(--muted);font-size:.92rem;line-height:1.75}
+.flow-note{margin-top:26px;font-size:.82rem;color:var(--muted)}
+
+/* faq */
+.faq{display:grid;gap:28px}
+.faq-list{display:grid;gap:12px;min-width:0}
+details{background:var(--bg);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;padding:16px 18px;font-weight:700;line-height:1.6}
+summary::-webkit-details-marker{display:none}
+summary .q{flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-family:var(--font-display);font-weight:900;font-size:.9rem}
+summary .chev{margin-left:auto;flex:none;transition:transform .2s;color:var(--accent);margin-top:2px}
+details[open] summary .chev{transform:rotate(180deg)}
+.ans{padding:0 18px 18px 58px;color:var(--muted);font-size:.95rem;line-height:1.8}
+.faq .photo{aspect-ratio:4/3}
+
+/* contact */
+.contact{display:grid;gap:28px}
+.contact-card{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:24px 20px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow);min-width:0}
+.tel-num{font-family:var(--font-display);font-weight:900;font-size:clamp(1.8rem,8vw,2.6rem);line-height:1.2;letter-spacing:.02em;user-select:all;word-break:keep-all}
+.info{display:grid;gap:12px;margin:0}
+.info div{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+.info svg{color:var(--accent);margin-top:4px}
+.info dt{display:none}
+.info dd{margin:0;word-break:break-all;min-width:0}
+.info .sm{display:block;font-size:.8rem;color:var(--muted);word-break:normal}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.contact .photo{aspect-ratio:4/3}
+
+/* footer */
+.ftr{background:var(--ink);color:var(--bg);padding-block:32px 28px;text-align:center}
+.ftr b{font-family:var(--font-display);font-size:1.1rem}
+.ftr small{display:block;margin-top:6px;opacity:.75;font-size:.78rem}
+:root[data-theme="dark"] .ftr,
+:root:not([data-theme="light"]) .ftr{background:var(--surface);color:var(--ink)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .ftr{background:var(--ink);color:var(--bg)}}
+:root[data-theme="light"] .ftr{background:var(--ink);color:var(--bg)}
+
+/* mobile call bar */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--bg);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none}
+.callbar .btn{width:100%}
+@media (max-width:759px){
+  .callbar{display:block}
+  .ftr{padding-bottom:96px}
+}
+
+@media (min-width:760px){
+  section.sec{padding-block:96px}
+  .hdr-tel{display:inline-flex}
+  .hero{padding-block:56px 80px}
+  .hero .wrap{grid-template-columns:1.05fr 1fr;align-items:center;gap:48px}
+  .hero-photo{aspect-ratio:4/5}
+  .pipe.p1{width:90px;height:360px;right:4%}
+  .pipe.p2{width:320px;height:90px;top:230px}
+  .trouble-grid{grid-template-columns:repeat(6,1fr)}
+  .t-card{grid-column:span 2;grid-template-columns:1fr;padding:14px}
+  .t-card:nth-child(n+4){grid-column:span 3}
+  .t-card .photo{aspect-ratio:4/3}
+  .t-card .photo .ph b{font-size:.9rem}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .case-grid{grid-template-columns:repeat(3,1fr)}
+  .owner{grid-template-columns:.8fr 1.2fr;gap:56px}
+  .flow-photo{aspect-ratio:21/8}
+  .steps{grid-template-columns:repeat(5,1fr);gap:18px}
+  .step{grid-template-columns:1fr;padding-bottom:0;gap:12px}
+  .step::before{left:64px;right:-18px;top:27px;bottom:auto;width:auto;height:2px}
+  .faq{grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+  .contact{grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  .contact-card{padding:34px}
+}
+@media (min-width:1000px){
+  .svc-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.hdr,summary .chev{transition:none}
+  .btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script>const{useState,useEffect}=React,COMPANY={name:"\u30B3\u30F3\u30D3\u30CB\u30A8\u30F3\u30C8 \u30C4\u30AB\u30E2\u30C8",owner:"\u585A\u672C \u5B97\u8CB4",ownerEn:"Noritaka Tsukamoto",zip:"\u3012426-0075",address:"\u9759\u5CA1\u770C\u85E4\u679D\u5E02\u702C\u6238\u65B0\u5C4B297-13",tel:"090-3855-4002",telLink:"09038554002",mail:"konbnient4002@outlook.jp"},IMG={hero:"img/hero.jpg",trouble:["img/t1.jpg","img/t2.jpg","img/t3.jpg","img/t4.jpg","img/t5.jpg"],service:["img/s1.jpg","img/s2.jpg","img/s3.jpg","img/s4.jpg","img/s5.jpg"],caseBefore:["img/c1b.jpg","img/c2b.jpg","img/c3b.jpg"],caseAfter:["img/c1a.jpg","img/c2a.jpg","img/c3a.jpg"],owner:"img/owner.jpg",flow:"img/flow.jpg",faq:"img/faq.jpg",contact:"img/contact.jpg"},TROUBLES=[{icon:"key",title:"\u9375\u304C\u958B\u304B\u306A\u3044\u3001\u58CA\u308C\u305F",hint:"\u9375\u30FB\u30C9\u30A2\u30CE\u30D6\u30FB\u9320\u524D"},{icon:"window",title:"\u7DB2\u6238\u3084\u30AC\u30E9\u30B9\u3092\u4EA4\u63DB\u3057\u305F\u3044",hint:"\u7DB2\u6238\u30FB\u7A93\u30AC\u30E9\u30B9"},{icon:"bee",title:"\u8702\u306E\u5DE3\u3092\u64A4\u53BB\u3057\u3066\u307B\u3057\u3044",hint:"\u8ED2\u4E0B\u30FB\u5EAD\u6728\u306A\u3069\u306E\u8702\u306E\u5DE3"},{icon:"wrench",title:"\u3061\u3087\u3063\u3068\u3057\u305F\u4FEE\u7406\u3092\u983C\u307F\u305F\u3044",hint:"\u8EAB\u8FD1\u306A\u4FEE\u7406\u306E\u69D8\u5B50"},{icon:"help",title:"\u3069\u3053\u306B\u76F8\u8AC7\u3057\u305F\u3089\u3044\u3044\u304B\u308F\u304B\u3089\u306A\u3044",hint:"\u304A\u56F0\u308A\u306E\u65B9\u306E\u30A4\u30E1\u30FC\u30B8",main:!0}],SERVICES=[{title:"\u4FEE\u7406\u30FB\u30E1\u30F3\u30C6\u30CA\u30F3\u30B9",desc:"\u904A\u5177\u3084\u9ED2\u677F\u306A\u3069\u3001\u8EAB\u8FD1\u306A\u8A2D\u5099\u306E\u4FEE\u7E55\u306E\u3054\u76F8\u8AC7\u306B\u3002",items:["\u904A\u5177\u4FEE\u7E55","\u9ED2\u677F\u30FB\u30DB\u30EF\u30A4\u30C8\u30DC\u30FC\u30C9\u5F35\u66FF\u4FEE\u7E55"],hint:"\u904A\u5177\u30FB\u9ED2\u677F\u306E\u4FEE\u7E55\u98A8\u666F"},{title:"\u9375\u30FB\u30AC\u30E9\u30B9\u30FB\u5EFA\u5177\u95A2\u4FC2",desc:"\u9375\u306E\u30C8\u30E9\u30D6\u30EB\u304B\u3089\u3001\u7A93\u307E\u308F\u308A\u306E\u4EA4\u63DB\u307E\u3067\u3002",items:["\u9375\u958B\u9320","\u9320\u524D\u4EA4\u63DB\u4FEE\u7406","\u30AC\u30E9\u30B9\u4EA4\u63DB","\u7DB2\u6238\u5F35\u66FF\u4EA4\u63DB\u53D6\u4ED8","\u30AB\u30FC\u30C6\u30F3\u30FB\u30D6\u30E9\u30A4\u30F3\u30C9\u4EA4\u63DB"],hint:"\u9375\u30FB\u30AC\u30E9\u30B9\u30FB\u7DB2\u6238\u306E\u4F5C\u696D\u98A8\u666F"},{title:"\u5EFA\u7BC9\u30FB\u8A2D\u5099\u30FB\u65BD\u8A2D\u95A2\u4FC2",desc:"\u571F\u6728\u30FB\u5EFA\u7BC9\u307E\u308F\u308A\u306E\u3053\u3068\u3082\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002",items:["\u571F\u6728\u5EFA\u7BC9"],hint:"\u571F\u6728\u30FB\u5EFA\u7BC9\u306E\u73FE\u5834\u98A8\u666F"},{title:"\u5BB3\u866B\u30FB\u5BB3\u7363\u5BFE\u7B56",desc:"\u8702\u3084\u3001\u5BB3\u7363\u30FB\u5BB3\u9CE5\u3067\u304A\u56F0\u308A\u306E\u3068\u304D\u306B\u3002",items:["\u8702\u99C6\u9664","\u5BB3\u7363\u5BB3\u9CE5\u99C6\u9664"],hint:"\u99C6\u9664\u4F5C\u696D\u306E\u98A8\u666F"},{title:"\u305D\u306E\u4ED6\u306E\u304A\u56F0\u308A\u3054\u3068",desc:"\u540D\u523A\u306B\u300C\u306A\u3069\u300D\u3068\u3042\u308B\u3068\u304A\u308A\u3001\u4E0A\u8A18\u4EE5\u5916\u306E\u3053\u3068\u3082\u307E\u305A\u306F\u304A\u8A71\u3057\u304F\u3060\u3055\u3044\u3002",items:["\u305D\u306E\u4ED6\u3001\u4F55\u3067\u3082\u3054\u76F8\u8AC7\u4E0B\u3055\u3044"],hint:"\u305D\u306E\u4ED6\u306E\u4F5C\u696D\u98A8\u666F",other:!0}],CASES=[{title:"\u7DB2\u6238\u306E\u5F35\u66FF\u3048",work:"\u7DB2\u6238\u306E\u5F35\u66FF\u3048",text:"\u50B7\u3093\u3060\u7DB2\u6238\u3092\u3001\u65B0\u3057\u3044\u3082\u306E\u306B\u5F35\u308A\u66FF\u3048\u307E\u3057\u305F\u3002"},{title:"\u901A\u8DEF\u30BF\u30A4\u30EB\u306E\u88DC\u4FEE",work:"\u30BF\u30A4\u30EB\u306E\u88DC\u4FEE",text:"\u306F\u304C\u308C\u305F\u30BF\u30A4\u30EB\u306E\u90E8\u5206\u3092\u88DC\u4FEE\u3057\u307E\u3057\u305F\u3002"},{title:"\u5C4B\u4E0A\u306E\u96E8\u6F0F\u308A\u88DC\u4FEE",work:"\u5C4B\u4E0A\u306E\u5E8A\u9762\u306E\u88DC\u4FEE",text:"\u96E8\u6F0F\u308A\u306E\u5BFE\u7B56\u3068\u3057\u3066\u3001\u5C4B\u4E0A\u306E\u5E8A\u9762\u3092\u88DC\u4FEE\u3057\u307E\u3057\u305F\u3002"}],OWNER_TEXT=["\u56F0\u3063\u305F\u3068\u304D\u306B\u3001\u6C17\u8EFD\u306B\u76F8\u8AC7\u3067\u304D\u308B\u5B58\u5728\u3067\u3042\u308A\u305F\u3044\u3002","\u3069\u3053\u306B\u983C\u3081\u3070\u3044\u3044\u304B\u308F\u304B\u3089\u306A\u3044\u3068\u304D\u3082\u3001\u307E\u305A\u306F\u58F0\u3092\u304B\u3051\u3066\u304F\u3060\u3055\u3044\u3002"],STEPS=[{title:"\u96FB\u8A71\u30FB\u30E1\u30FC\u30EB\u3067\u76F8\u8AC7",text:"\u304A\u56F0\u308A\u3054\u3068\u3092\u304A\u805E\u304B\u305B\u304F\u3060\u3055\u3044\u3002\u5199\u771F\u304C\u3042\u308B\u3068\u72B6\u6CC1\u304C\u4F1D\u308F\u308A\u3084\u3059\u304F\u306A\u308A\u307E\u3059\u3002"},{title:"\u5185\u5BB9\u78BA\u8A8D\u30FB\u5FC5\u8981\u306B\u5FDC\u3058\u3066\u73FE\u5730\u78BA\u8A8D",text:"\u304A\u8A71\u3092\u4F3A\u3044\u3001\u5FC5\u8981\u3067\u3042\u308C\u3070\u73FE\u5730\u3067\u72B6\u6CC1\u3092\u78BA\u8A8D\u3057\u307E\u3059\u3002"},{title:"\u304A\u898B\u7A4D\u308A\u30FB\u4F5C\u696D\u5185\u5BB9\u306E\u3054\u6848\u5185",text:"\u4F5C\u696D\u306E\u5185\u5BB9\u3068\u3001\u304A\u898B\u7A4D\u308A\u306B\u3064\u3044\u3066\u3054\u6848\u5185\u3057\u307E\u3059\u3002"},{title:"\u3054\u7D0D\u5F97\u3044\u305F\u3060\u3044\u305F\u3046\u3048\u3067\u4F5C\u696D",text:"\u3054\u7D0D\u5F97\u3044\u305F\u3060\u3044\u3066\u304B\u3089\u3001\u4F5C\u696D\u306B\u5165\u308A\u307E\u3059\u3002"},{title:"\u4F5C\u696D\u5B8C\u4E86",text:"\u4F5C\u696D\u304C\u7D42\u308F\u308A\u307E\u3057\u305F\u3089\u3001\u4ED5\u4E0A\u304C\u308A\u3092\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002"}],FAQS=[{q:"\u5C0F\u3055\u306A\u4FEE\u7406\u3067\u3082\u76F8\u8AC7\u3067\u304D\u307E\u3059\u304B\uFF1F",a:"\u5927\u304D\u3055\u306B\u304B\u304B\u308F\u3089\u305A\u3001\u307E\u305A\u306F\u304A\u6C17\u8EFD\u306B\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002\u5185\u5BB9\u3092\u4F3A\u3063\u305F\u3046\u3048\u3067\u3001\u5BFE\u5FDC\u3067\u304D\u308B\u304B\u3069\u3046\u304B\u3092\u304A\u4F1D\u3048\u3057\u307E\u3059\u3002"},{q:"\u540D\u523A\u306B\u8F09\u3063\u3066\u3044\u306A\u3044\u4F5C\u696D\u3082\u76F8\u8AC7\u3067\u304D\u307E\u3059\u304B\uFF1F",a:"\u540D\u523A\u306B\u8F09\u3063\u3066\u3044\u306A\u3044\u3053\u3068\u3067\u3082\u3001\u307E\u305A\u306F\u304A\u554F\u3044\u5408\u308F\u305B\u304F\u3060\u3055\u3044\u3002\u5BFE\u5FDC\u3067\u304D\u308B\u304B\u3069\u3046\u304B\u306F\u3001\u5185\u5BB9\u3092\u78BA\u8A8D\u3057\u3066\u304B\u3089\u3054\u6848\u5185\u3057\u307E\u3059\u3002"},{q:"\u898B\u7A4D\u308A\u306F\u53EF\u80FD\u3067\u3059\u304B\uFF1F",a:"\u3054\u76F8\u8AC7\u306E\u5185\u5BB9\u306B\u5FDC\u3058\u3066\u3001\u304A\u898B\u7A4D\u308A\u306E\u3054\u6848\u5185\u3092\u4E88\u5B9A\u3057\u3066\u3044\u307E\u3059\u3002"},{q:"\u3069\u306E\u5730\u57DF\u307E\u3067\u5BFE\u5FDC\u3057\u3066\u3044\u307E\u3059\u304B\uFF1F",a:"\u307E\u305A\u306F\u304A\u4F4F\u307E\u3044\u306E\u5730\u57DF\u3092\u304A\u77E5\u3089\u305B\u304F\u3060\u3055\u3044\u3002"}],PATHS={key:React.createElement("g",null,React.createElement("circle",{cx:"8",cy:"15",r:"4"}),React.createElement("path",{d:"M11 12 20 3M17 6l3 3M14.5 8.5l2 2"})),window:React.createElement("g",null,React.createElement("rect",{x:"4",y:"4",width:"16",height:"16",rx:"2"}),React.createElement("path",{d:"M12 4v16M4 12h16"})),bee:React.createElement("g",null,React.createElement("path",{d:"M12 3l7 4v8l-7 4-7-4V7z"}),React.createElement("path",{d:"M12 9v6M9 10.5v3M15 10.5v3"})),wrench:React.createElement("path",{d:"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"}),help:React.createElement("g",null,React.createElement("circle",{cx:"12",cy:"12",r:"9"}),React.createElement("path",{d:"M9.5 9.2a2.6 2.6 0 1 1 3.6 2.4c-.7.4-1.1.9-1.1 1.7"}),React.createElement("path",{d:"M12 17h.01"})),phone:React.createElement("path",{d:"M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"}),mail:React.createElement("g",null,React.createElement("rect",{x:"3",y:"5",width:"18",height:"14",rx:"2"}),React.createElement("path",{d:"M3 7l9 6 9-6"})),pin:React.createElement("g",null,React.createElement("path",{d:"M12 21s-6-5.5-6-10a6 6 0 0 1 12 0c0 4.5-6 10-6 10z"}),React.createElement("circle",{cx:"12",cy:"11",r:"2"})),camera:React.createElement("g",null,React.createElement("rect",{x:"3",y:"7",width:"18",height:"13",rx:"2"}),React.createElement("path",{d:"M8 7l1.5-2h5L16 7"}),React.createElement("circle",{cx:"12",cy:"13.5",r:"3.5"})),chev:React.createElement("path",{d:"M6 9l6 6 6-6"}),info:React.createElement("g",null,React.createElement("circle",{cx:"12",cy:"12",r:"9"}),React.createElement("path",{d:"M12 11v6M12 7.5h.01"})),area:React.createElement("g",null,React.createElement("circle",{cx:"12",cy:"12",r:"9"}),React.createElement("path",{d:"M12 7v5l3 2"}))};function Icon({n:e,size:a=22}){return React.createElement("svg",{width:a,height:a,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"1.8",strokeLinecap:"round",strokeLinejoin:"round","aria-hidden":"true"},PATHS[e])}function Photo({src:e,label:a,hint:t,className:s="",style:i}){return React.createElement("div",{className:`photo ${e?"has-img":""} ${s}`,style:i},e?React.createElement("img",{src:e,alt:a.replace(/^ここに/,"")}):React.createElement("div",{className:"ph",role:"img","aria-label":`\u5199\u771F\u67A0\uFF1A${a}`},React.createElement(Icon,{n:"camera",size:28}),React.createElement("b",null,a),t&&React.createElement("small",null,t),React.createElement("span",{className:"chip"},"\u5199\u771F\u5DEE\u3057\u66FF\u3048\u4E88\u5B9A")))}function Head({tag:e,en:a,title:t,lead:s}){return React.createElement("div",{className:"sec-head"},React.createElement("div",{className:"eyebrow"},a),React.createElement("h2",{className:"sec-title"},t),s&&React.createElement("p",{className:"sec-lead"},s))}function CopyBtn({text:e,label:a}){const[t,s]=useState(!1);return React.createElement("button",{type:"button",className:"btn ghost sm",onClick:async()=>{try{await navigator.clipboard.writeText(e),s(!0),setTimeout(()=>s(!1),1800)}catch(l){s(!1)}}},t?"\u30B3\u30D4\u30FC\u3057\u307E\u3057\u305F":a)}function TelButton({className:e="",children:a}){return React.createElement("a",{className:`btn ${e}`,href:`tel:${COMPANY.telLink}`},React.createElement(Icon,{n:"phone",size:20}),a)}function Hero(){return React.createElement("section",{className:"hero",id:"top"},React.createElement("span",{className:"pipe p1","aria-hidden":"true"}),React.createElement("span",{className:"pipe p2","aria-hidden":"true"}),React.createElement("span",{className:"pipe p3","aria-hidden":"true"}),React.createElement("div",{className:"wrap"},React.createElement("div",{className:"hero-copy"},React.createElement("div",{className:"eyebrow"},"\u9759\u5CA1\u770C\u85E4\u679D\u5E02 \u702C\u6238\u65B0\u5C4B"),React.createElement("h1",null,"\u66AE\u3089\u3057\u306E\u56F0\u3063\u305F\u3001",React.createElement("br",null),React.createElement("em",null,"\u307E\u305A\u306F\u30C4\u30AB\u30E2\u30C8"),"\u3078\u3002"),React.createElement("p",{className:"hero-sub"},"\u4FEE\u7406\u3082\u3001\u4EA4\u63DB\u3082\u3001\u3061\u3087\u3063\u3068\u3057\u305F\u56F0\u308A\u3054\u3068\u3082\u3002"),React.createElement("div",{className:"consult"},"\u5148\u305A\u306F\u4F55\u3067\u3082\u3054\u76F8\u8AC7\u4E0B\u3055\u3044\u3002"),React.createElement("p",{className:"hero-note"},"\u5BFE\u5FDC\u3067\u304D\u308B\u304B\u3069\u3046\u304B\u3082\u542B\u3081\u3066\u3001\u307E\u305A\u306F\u304A\u6C17\u8EFD\u306B\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002"),React.createElement("div",{className:"hero-cta"},React.createElement(TelButton,null,"\u96FB\u8A71\u3067\u76F8\u8AC7\u3059\u308B"),React.createElement("a",{className:"btn ghost",href:"#services"},"\u5BFE\u5FDC\u30B5\u30FC\u30D3\u30B9\u3092\u898B\u308B")),React.createElement("p",{className:"hero-note",style:{marginTop:-6}},COMPANY.tel)),React.createElement(Photo,{src:IMG.hero,label:"\u3053\u3053\u306B\u30D5\u30A1\u30FC\u30B9\u30C8\u30D3\u30E5\u30FC\u5199\u771F",hint:"\u4F5C\u696D\u4E2D\u306E\u69D8\u5B50\u3001\u307E\u305F\u306F\u7B11\u9854\u306E\u4EE3\u8868\u8005\u306A\u3069\u3002\u7E26\u9577\u3067\u3082\u6A2A\u9577\u3067\u3082\u4F7F\u3048\u307E\u3059",className:"hero-photo"})))}function Troubles(){return React.createElement("section",{className:"sec alt",id:"troubles"},React.createElement("div",{className:"wrap"},React.createElement(Head,{tag:"SECTION 02 \u304A\u56F0\u308A\u3054\u3068",en:"TROUBLES",title:"\u3053\u3093\u306A\u304A\u56F0\u308A\u3054\u3068\u3042\u308A\u307E\u305B\u3093\u304B\uFF1F"}),React.createElement("div",{className:"trouble-grid"},TROUBLES.map((e,a)=>React.createElement("div",{className:`t-card ${e.main?"main":""}`,key:e.title},React.createElement(Photo,{src:IMG.trouble[a],label:`\u3053\u3053\u306B${e.hint}\u306E\u5199\u771F`,hint:"\u304A\u56F0\u308A\u3054\u3068\u306E\u5834\u9762\u304C\u308F\u304B\u308B\u5199\u771F"}),React.createElement("div",null,React.createElement("div",{className:"t-ico"},React.createElement(Icon,{n:e.icon})),React.createElement("h3",null,e.title))))),React.createElement("p",{className:"closing"},React.createElement("span",null,"\u305D\u3093\u306A\u3068\u304D\u306F\u3001\u307E\u305A\u30C4\u30AB\u30E2\u30C8\u306B\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002"))))}function Services(){return React.createElement("section",{className:"sec",id:"services"},React.createElement("div",{className:"wrap"},React.createElement(Head,{tag:"SECTION 03 \u5BFE\u5FDC\u30B5\u30FC\u30D3\u30B9",en:"SERVICES",title:"\u5BFE\u5FDC\u30B5\u30FC\u30D3\u30B9"}),React.createElement("div",{className:"svc-grid"},SERVICES.map((e,a)=>React.createElement("article",{className:`svc ${e.other?"other":""}`,key:e.title},React.createElement(Photo,{src:IMG.service[a],label:`\u3053\u3053\u306B${e.hint}\u306E\u5199\u771F`}),React.createElement("div",{className:"svc-body"},React.createElement("span",{className:"svc-no"},"\u2460\u2461\u2462\u2463\u2464"[a]),React.createElement("h3",null,e.title),React.createElement("p",null,e.desc),React.createElement("ul",{className:"chips"},e.items.map(t=>React.createElement("li",{key:t},t))))))),React.createElement("p",{className:"svc-more"},"\u3053\u3053\u306B\u8F09\u3063\u3066\u3044\u306A\u3044\u3053\u3068\u3082\u3001\u307E\u305A\u306F\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002")))}function Cases(){return React.createElement("section",{className:"sec alt",id:"cases"},React.createElement("div",{className:"wrap"},React.createElement(Head,{tag:"SECTION 04 \u65BD\u5DE5\u4E8B\u4F8B",en:"WORKS",title:"\u65BD\u5DE5\u4E8B\u4F8B"}),React.createElement("div",{className:"case-grid"},CASES.map((e,a)=>React.createElement("article",{className:"case",key:e.title},React.createElement("div",{className:"ba"},React.createElement("figure",null,React.createElement(Photo,{src:IMG.caseBefore[a],label:"\u4F5C\u696D\u524D\u306E\u5199\u771F"}),React.createElement("figcaption",null,"BEFORE")),React.createElement("figure",null,React.createElement(Photo,{src:IMG.caseAfter[a],label:"\u4F5C\u696D\u5F8C\u306E\u5199\u771F"}),React.createElement("figcaption",null,"AFTER"))),React.createElement("h3",null,e.title),React.createElement("dl",{className:"dl"},React.createElement("dt",null,"\u4F5C\u696D\u5185\u5BB9"),React.createElement("dd",null,e.work),React.createElement("dt",null,"\u3072\u3068\u3053\u3068\u8AAC\u660E"),React.createElement("dd",null,e.text)))))))}function Owner(){return React.createElement("section",{className:"sec",id:"owner"},React.createElement("div",{className:"wrap"},React.createElement(Head,{tag:"SECTION 05 \u4EE3\u8868\u7D39\u4ECB",en:"OWNER",title:"\u4EE3\u8868\u7D39\u4ECB"}),React.createElement("div",{className:"owner"},React.createElement(Photo,{src:IMG.owner,label:"\u3053\u3053\u306B\u4EE3\u8868\u5199\u771F",hint:"\u7E26\u9577\uFF084:5\uFF09\u306E\u5199\u771F\u304C\u5408\u3044\u307E\u3059"}),React.createElement("div",null,React.createElement("div",{className:"owner-role"},"\u4EE3\u8868"),React.createElement("div",{className:"owner-name"},COMPANY.owner,React.createElement("small",null,COMPANY.ownerEn)),React.createElement("blockquote",null,OWNER_TEXT.map(e=>React.createElement("p",{key:e},e)))))))}function Flow(){return React.createElement("section",{className:"sec alt",id:"flow"},React.createElement("div",{className:"wrap"},React.createElement(Head,{tag:"SECTION 06 \u3054\u76F8\u8AC7\u306E\u6D41\u308C",en:"FLOW",title:"\u3054\u76F8\u8AC7\u304B\u3089\u4F5C\u696D\u307E\u3067"}),React.createElement(Photo,{src:IMG.flow,label:"\u3053\u3053\u306B\u4F5C\u696D\u98A8\u666F\u306E\u5199\u771F",hint:"\u6253\u3061\u5408\u308F\u305B\u3084\u4F5C\u696D\u4E2D\u306E\u69D8\u5B50\u306A\u3069\uFF08\u6A2A\u9577\uFF09",className:"flow-photo"}),React.createElement("ol",{className:"steps"},STEPS.map((e,a)=>React.createElement("li",{className:"step",key:e.title},React.createElement("div",{className:"step-no"},React.createElement("small",null,"STEP"),React.createElement("b",null,a+1)),React.createElement("div",null,React.createElement("h3",null,e.title),React.createElement("p",null,e.text)))))))}function Faq(){return React.createElement("section",{className:"sec",id:"faq"},React.createElement("div",{className:"wrap"},React.createElement(Head,{tag:"SECTION 07 \u3088\u304F\u3042\u308B\u3054\u8CEA\u554F",en:"FAQ",title:"\u3088\u304F\u3042\u308B\u3054\u8CEA\u554F"}),React.createElement("div",{className:"faq"},React.createElement("div",{className:"faq-list"},FAQS.map((e,a)=>React.createElement("details",{key:e.q,open:a===0},React.createElement("summary",null,React.createElement("span",{className:"q"},"Q"),React.createElement("span",null,e.q),React.createElement("span",{className:"chev"},React.createElement(Icon,{n:"chev",size:20}))),React.createElement("div",{className:"ans"},e.a)))),React.createElement(Photo,{src:IMG.faq,label:"\u3053\u3053\u306B\u4F5C\u696D\u98A8\u666F\u306E\u5199\u771F",hint:"\u4EFB\u610F\u306E\u5199\u771F\uFF08\u306A\u304F\u3066\u3082\u53EF\uFF09"}))))}function Contact(){return React.createElement("section",{className:"sec alt",id:"contact"},React.createElement("div",{className:"wrap"},React.createElement(Head,{tag:"SECTION 08 \u304A\u554F\u3044\u5408\u308F\u305B",en:"CONTACT",title:"\u3069\u3053\u306B\u983C\u3082\u3046\u304B\u8FF7\u3063\u305F\u3089\u3001\u307E\u305A\u306F\u3054\u76F8\u8AC7\u304F\u3060\u3055\u3044\u3002"}),React.createElement("div",{className:"contact"},React.createElement("div",{className:"contact-card"},React.createElement("div",null,React.createElement("div",{className:"eyebrow"},"\u304A\u96FB\u8A71\u3067\u306E\u3054\u76F8\u8AC7"),React.createElement("div",{className:"tel-num"},COMPANY.tel)),React.createElement("div",{className:"row"},React.createElement(TelButton,null,"\u30BF\u30C3\u30D7\u3057\u3066\u96FB\u8A71\u3059\u308B"),React.createElement(CopyBtn,{text:COMPANY.tel,label:"\u756A\u53F7\u3092\u30B3\u30D4\u30FC"})),React.createElement("dl",{className:"info"},React.createElement("div",null,React.createElement("dt",null,"\u30E1\u30FC\u30EB"),React.createElement(Icon,{n:"mail",size:20}),React.createElement("dd",null,COMPANY.mail,React.createElement("span",{className:"row",style:{marginTop:8}},React.createElement(CopyBtn,{text:COMPANY.mail,label:"\u30A2\u30C9\u30EC\u30B9\u3092\u30B3\u30D4\u30FC"})))),React.createElement("div",null,React.createElement("dt",null,"\u6240\u5728\u5730"),React.createElement(Icon,{n:"pin",size:20}),React.createElement("dd",null,COMPANY.zip,React.createElement("br",null),COMPANY.address)))),React.createElement(Photo,{src:IMG.contact,label:"\u3053\u3053\u306B\u4E8B\u52D9\u6240\u30FB\u8ECA\u4E21\u30FB\u5916\u89B3\u306E\u5199\u771F",hint:"\u304A\u5BA2\u69D8\u304C\u5B89\u5FC3\u3067\u304D\u308B\u5199\u771F\uFF08\u4EFB\u610F\uFF09"}))))}function App(){const[e,a]=useState(!1);return useEffect(()=>{const t=()=>a(window.scrollY>8);return window.addEventListener("scroll",t,{passive:!0}),t(),()=>window.removeEventListener("scroll",t)},[]),React.createElement("div",null,React.createElement("header",{className:`hdr ${e?"scrolled":""}`},React.createElement("div",{className:"wrap"},React.createElement("a",{className:"logo",href:"#top"},React.createElement("span",{className:"logo-mark"},React.createElement(Icon,{n:"wrench",size:20})),React.createElement("span",null,COMPANY.name)),React.createElement(TelButton,{className:"sm hdr-tel"},COMPANY.tel))),React.createElement("main",null,React.createElement(Hero,null),React.createElement(Troubles,null),React.createElement(Services,null),React.createElement(Cases,null),React.createElement(Owner,null),React.createElement(Flow,null),React.createElement(Faq,null),React.createElement(Contact,null)),React.createElement("footer",{className:"ftr"},React.createElement("div",{className:"wrap"},React.createElement("b",null,COMPANY.name),React.createElement("small",null,COMPANY.address),React.createElement("small",null,"\xA9 ",COMPANY.name))),React.createElement("div",{className:"callbar"},React.createElement(TelButton,null,"\u96FB\u8A71\u3067\u76F8\u8AC7\u3059\u308B")))}ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App,null));
+</script>
+</body>
+</html>
